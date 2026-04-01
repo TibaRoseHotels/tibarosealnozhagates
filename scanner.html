@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+  />
+
+  <title>QR Scanner</title>
+
+  <!-- مكتبة المسح -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #reader {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+    }
+
+    .hint {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      padding: 12px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .bottom {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* إزالة UI الافتراضي */
+    #reader__dashboard_section,
+    #reader__header_message {
+      display: none !important;
+    }
+
+    #reader video {
+      object-fit: cover !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hint">ثبت الكارت جوه الإطار وخلي الـ QR واضح</div>
+  <div id="reader"></div>
+  <div class="bottom">Scanning...</div>
+
+  <script src="scanner.js"></script>
+</body>
+</html>
